@@ -29,3 +29,15 @@ setAngle1 : 45.123456789 deg
 
 The problem was tested to occur with Geant4 9.6.p04 and 10.4.p03. It probably
 occurs for versions in between as well?
+
+### Patch
+
+Issuing `/control/useDoublePrecision` before loading the macro patches this
+problem. Now it yields:
+
+```bash
+setAngle0 : 45.123456789000002 deg
+setAngle1 : 45.123456789 deg
+```
+
+but the numeric values of the angles are indeed equal.
